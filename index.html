@@ -10,32 +10,30 @@
             position: relative;
             max-width: 100%;
             margin: auto;
-            overflow: hidden;
         }
 
         .slides {
             display: none;
-            position: absolute;
             width: 100%;
-            height: 100%;
         }
 
         .slide-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Cover the container */
+            height: auto;
+            border-radius: 15px;
+            padding: 1px;
         }
 
         .dots-container {
             text-align: center;
-            padding: 10px;
+            padding: 1px;
         }
 
         .dot {
             cursor: pointer;
-            height: 12px;
-            width: 12px;
-            margin: 0 4px;
+            height: 8px;
+            width: 8px;
+            margin: 0 2px;
             background-color: #ff3363;
             border-radius: 50%;
             display: inline-block;
@@ -48,39 +46,41 @@
 
         .section-title {
             text-align: left;
-            padding: 10px;
-            font-size: 18px;
+            padding: 1px;
+            font-size: 16px;
             color: #030303;
+            font-style: Normal;
             font-weight: bold;
-            font-family: 'Arial', sans-serif;
-            margin-top: 20px;
+            font-family: 'Arial';
+            line-height: 1.6; /* Adjust line height to improve text readability */
+            margin-top: 8px; /* Ensure there’s space above the text */
         }
 
-        /* Image Box Styles */
+        /* 16:9 Aspect Ratio Box Styles */
         .container {
             display: flex;
             flex-direction: row;
-            gap: 15px;
-            padding: 10px;
-            overflow-x: auto;
-            white-space: nowrap;
+            gap: 13px; /* Space between image boxes */
+            padding: 6px;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent wrapping of items */
         }
 
         .image-box {
-            width: 250px;
-            height: 150px; /* Fixed height for consistency */
+            width: 250px; /* Fixed width for image boxes */
+            height: 159px; /* Fixed height to maintain aspect ratio */
             overflow: hidden;
             border-radius: 13px;
             background-color: #f0f0f0;
             display: inline-block;
-            flex: 0 0 auto;
-            position: relative;
+            flex: 0 0 auto; /* Prevent shrinking */
         }
 
         .image-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cover the box */
+            object-fit: cover;
+            border-radius: 13px;
         }
     </style>
 </head>
@@ -91,21 +91,21 @@
     <!-- Slide 1 -->
     <div class="slides">
         <a href="https://example.com/page1">
-            <img src="https://t1.blockdit.com/photos/2021/08/6107634191d64c0c815117cf_800x0xcover_CG4aH5UM.jpg" class="slide-image" alt="Image 1">
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202206/0608/9cJzlUE7sOpwvrCmOzxubniq.jpg" class="slide-image" alt="Image 1">
         </a>
     </div>
 
     <!-- Slide 2 -->
     <div class="slides">
         <a href="https://example.com/page2">
-            <img src="https://yehtaeoo.github.io/mmvlog.github.io/01.jpg" class="slide-image" alt="Image 2">
+            <img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/01/resident-evil-2-hero-shot.jpg" class="slide-image" alt="Image 2">
         </a>
     </div>
 
     <!-- Slide 3 -->
     <div class="slides">
         <a href="https://example.com/page3">
-            <img src="https://yehtaeoo.github.io/mmvlog.github.io/01.jpg" class="slide-image" alt="Image 3">
+            <img src="https://hiepsibaotap.com/wp-content/uploads/2019/01/thumb-1920-939737-1024x576.jpg" class="slide-image" alt="Image 3">
         </a>
     </div>
 
@@ -130,9 +130,9 @@
         </a>
     </div>
 
-    <!-- Slide 7 -->
+ <!-- Slide 7 -->
     <div class="slides">
-        <a href="https://example.com/page7">
+        <a href="https://example.com/page6">
             <img src="https://www.powerpyx.com/wp-content/uploads/resident-evil-8-village-wallpaper.jpg" class="slide-image" alt="Image 7">
         </a>
     </div>
@@ -212,9 +212,7 @@
         }
 
         slides[slideIndex - 1].style.display = "block";
-        if (dots[slideIndex - 1]) {
-            dots[slideIndex - 1].className += " active";
-        }
+        dots[slideIndex - 1].className += " active";
     }
 
     function currentSlide(n) {
@@ -230,7 +228,7 @@
         for (let i = 0; i < slides.length; i++) {
             let dot = document.createElement("span");
             dot.className = "dot";
-            dot.onclick = function() { currentSlide(i + 1); }; // Adjust for 1-based index
+            dot.onclick = function() { currentSlide(i); };
             dotsContainer.appendChild(dot);
         }
     }
