@@ -1,0 +1,23 @@
+{
+  "latest_content_text": "Latest Content",
+  "slider_images": [
+    {
+      "image_url": "https://yourdomain.com/image1.jpg",
+      "link_url": "https://yourdomain.com/link1"
+    },
+    {
+      "image_url": "https://yourdomain.com/image2.jpg",
+      "link_url": "https://yourdomain.com/link2"
+    }
+  ],
+  "image_boxes": [
+    {
+      "image_url": "https://yourdomain.com/box1.jpg",
+      "link_url": "https://yourdomain.com/boxlink1"
+    },
+    {
+      "image_url": "https://yourdomain.com/box2.jpg",
+      "link_url": "https://yourdomain.com/boxlink2"
+    }
+  ]
+}
