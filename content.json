@@ -1,23 +1,16 @@
 {
-  "latest_content_text": "Latest Content",
-  "slider_images": [
+  "images": [
     {
-      "image_url": "https://yourdomain.com/image1.jpg",
-      "link_url": "https://yourdomain.com/link1"
+      "imageUrl": "https://yourgithubusername.github.io/yourproject/image1.jpg",
+      "webUrl": "https://website1.com"
     },
     {
-      "image_url": "https://yourdomain.com/image2.jpg",
-      "link_url": "https://yourdomain.com/link2"
-    }
-  ],
-  "image_boxes": [
-    {
-      "image_url": "https://yourdomain.com/box1.jpg",
-      "link_url": "https://yourdomain.com/boxlink1"
+      "imageUrl": "https://yourgithubusername.github.io/yourproject/image2.jpg",
+      "webUrl": "https://website2.com"
     },
     {
-      "image_url": "https://yourdomain.com/box2.jpg",
-      "link_url": "https://yourdomain.com/boxlink2"
+      "imageUrl": "https://yourgithubusername.github.io/yourproject/image3.jpg",
+      "webUrl": "https://website3.com"
     }
   ]
 }
