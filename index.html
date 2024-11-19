@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible", content="ie=edge">
-	<title>Document</title>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
     <style>
-        #dplayer{
-                max-width: auto;
-                height: 560px;
-                margin: auto;
-            }
-
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+        }
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
     </style>
 </head>
-
 <body>
+    <video id="videoPlayer" controls autoplay>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <div id="dplayer"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
     <script>
+        // Get the video URL from the query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoUrl = urlParams.get('videoUrl');
 
-            var dp = new DPlayer({
-    container: document.getElementById('dplayer'),
-    screenshot: true,
-    video: {
-        url: 'https://hello-world-silent-sun-f8f9.koyehtaeoo.workers.dev/0:/Saw_X_Trailer1_720P.mp4',
-        pic: 'https://media.themoviedb.org/t/p/w533_and_h300_bestv2/FUnAVgaTs5xZWXcVzPJNxd9qGA.jpg',
-        thumbnails: 'https://media.themoviedb.org/t/p/w533_and_h300_bestv2/FUnAVgaTs5xZWXcVzPJNxd9qGA.jpg',
-            }
-    });
-
+        // Set the video source dynamically
+        if (videoUrl) {
+            document.getElementById('videoPlayer').src = videoUrl;
+        } else {
+            alert('No video URL provided!');
+        }
     </script>
 </body>
-
 </html>
-	
