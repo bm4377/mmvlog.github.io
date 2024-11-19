@@ -17,8 +17,6 @@
         .video-container {
             position: relative;
             width: 100%;
-            max-width: auto;
-            aspect-ratio: 16 / 9;
             background-color: #000;
         }
         video {
@@ -57,10 +55,21 @@
             border-top: 20px solid transparent;
             border-bottom: 20px solid transparent;
         }
+
+        /* Media query for small screens */
+        @media (max-width: 480px) {
+            .play-button {
+                width: 70px;
+                height: 70px;
+            }
+            .play-icon {
+                border-left: 25px solid white;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="video-container">
+    <div id="video-container" class="video-container">
         <img id="thumbnail" class="thumbnail" src="https://assets-prd.ignimgs.com/2024/08/15/blackmythwukong-review-blogroll-1723762612149.jpg" alt="Video Thumbnail">
         <div id="playButton" class="play-button">
             <div class="play-icon"></div>
@@ -75,6 +84,7 @@
         const videoPlayer = document.getElementById('videoPlayer');
         const thumbnail = document.getElementById('thumbnail');
         const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('video-container');
         const urlParams = new URLSearchParams(window.location.search);
         const videoUrl = urlParams.get('videoUrl');
 
@@ -83,6 +93,16 @@
         } else {
             alert('No video URL provided!');
         }
+
+        // Wait for video metadata to load and calculate aspect ratio dynamically
+        videoPlayer.addEventListener('loadedmetadata', () => {
+            const videoWidth = videoPlayer.videoWidth;
+            const videoHeight = videoPlayer.videoHeight;
+            const aspectRatio = videoWidth / videoHeight;
+
+            // Set the container's aspect ratio based on the video's ratio
+            videoContainer.style.aspectRatio = `${aspectRatio}`;
+        });
 
         // Play video and hide thumbnail/play button
         playButton.addEventListener('click', () => {
