@@ -38,22 +38,22 @@
             transform: translate(-50%, -50%);
             width: 90px;
             height: 90px;
-            background: rgba(255, 255, 255, 0.8);
+            background: skyblue;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+            transition: transform 0.2s, background 0.3s;
         }
         .play-button:hover {
-            background: rgba(255, 255, 255, 1);
+            background: #00aaff; /* Slightly darker sky blue on hover */
             transform: translate(-50%, -50%) scale(1.1);
         }
         .play-icon {
             width: 0;
             height: 0;
-            border-left: 30px solid black;
+            border-left: 30px solid white; /* Play icon is white */
             border-top: 20px solid transparent;
             border-bottom: 20px solid transparent;
         }
