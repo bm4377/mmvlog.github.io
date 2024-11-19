@@ -36,26 +36,26 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 0, 0, 0.7);
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
         .play-button:hover {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(255, 255, 255, 1);
+            transform: translate(-50%, -50%) scale(1.1);
         }
         .play-icon {
-            width: 40px;
-            height: 40px;
-            border: solid 20px transparent;
-            border-left-color: white;
-            border-width: 0 0 0 40px;
-            margin-left: 5px;
+            width: 0;
+            height: 0;
+            border-left: 30px solid black;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
         }
     </style>
 </head>
