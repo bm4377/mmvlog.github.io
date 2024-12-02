@@ -1,0 +1,3 @@
+#EXTM3U
+#EXT-X-STREAM-INF:BANDWIDTH=200000,RESOLUTION=416x234
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/prog_index.m3u8
